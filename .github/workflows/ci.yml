@@ -22,4 +22,13 @@ jobs:
             - name: Check ESLint
               run: npx eslint .
 
+            - run: mkdir -p dist/
+            - run: echo "BUILDING" > dist/build.txt
+            
+            - name: Upload artifact
+              uses: actions/upload-artifact@v4
+              with:
+                name: build-artifact
+                path: dist/build.txt
+
             
