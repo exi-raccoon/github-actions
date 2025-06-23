@@ -1,7 +1,7 @@
 
 # Atelier GitHub Actions : CI avec Node.js
 
-[Status] (https://github.com/exi-raccoon/github-actions) <!-- STATUS_BADGE -->
+[![Demo GitHub Actions](https://github.com/exi-raccoon/github-actions/actions/workflows/ci.yml/badge.svg?branch=main&event=push)](https://github.com/exi-raccoon/github-actions/actions/workflows/ci.yml)<!-- STATUS_BADGE -->
 
 ## 🎯 Objectif
 Découvrir GitHub Actions à travers un projet Node.js simple. À chaque `push`, on souhaite :

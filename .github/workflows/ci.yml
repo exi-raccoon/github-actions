@@ -1,9 +1,12 @@
 # Le fichier YAML est à compléter
 name: Demo GitHub Actions
-on: [push]
+on:
+  push:
+    branches-ignore:
+      - 'feature/*'
+  workflow_dispatch:    
 jobs:
     build:
-        if: github.repository != 'feature/*'
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code
@@ -31,17 +34,14 @@ jobs:
             
             - run: echo "Success message"
             
-            - name: Check and update badges
-              uses: lucasvanmol/status-badges@v1
-              with:
-                path: "README.md"
-                token: ${{ secrets.GITHUB_TOKEN }}
     lint:
-        if: github.repository != 'feature/*'
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
+
+            - name: Install dependencies
+              run: npm install
 
             - name: Check ESLint
               run: npx eslint .
