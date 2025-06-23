@@ -1,7 +1,7 @@
 
 # Atelier GitHub Actions : CI avec Node.js
 
-Status : <!-- STATUS_BADGE -->
+[Status] (https://github.com/exi-raccoon/github-actions) <!-- STATUS_BADGE -->
 
 ## 🎯 Objectif
 Découvrir GitHub Actions à travers un projet Node.js simple. À chaque `push`, on souhaite :

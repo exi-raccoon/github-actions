@@ -20,9 +20,6 @@ jobs:
             - name: Run tests
               run: npm test
 
-            - name: Check ESLint
-              run: npx eslint .
-
             - run: mkdir -p dist/
             - run: echo "BUILDING" > dist/build.txt
 
@@ -39,3 +36,12 @@ jobs:
               with:
                 path: "README.md"
                 token: ${{ secrets.GITHUB_TOKEN }}
+    lint:
+        if: github.repository != 'feature/*'
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Check ESLint
+              run: npx eslint .
