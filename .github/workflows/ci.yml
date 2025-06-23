@@ -34,11 +34,6 @@ jobs:
             
             - run: echo "Success message"
             
-            - name: Check and update badges
-              uses: lucasvanmol/status-badges@v1
-              with:
-                path: "README.md"
-                token: ${{ secrets.GITHUB_TOKEN }}
     lint:
         runs-on: ubuntu-latest
         steps:
