@@ -3,6 +3,7 @@ name: Demo GitHub Actions
 on: [push]
 jobs:
     build:
+        if: github.repository != 'feature/*'
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code
