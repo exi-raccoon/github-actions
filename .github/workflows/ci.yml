@@ -24,11 +24,17 @@ jobs:
 
             - run: mkdir -p dist/
             - run: echo "BUILDING" > dist/build.txt
-            
+
             - name: Upload artifact
               uses: actions/upload-artifact@v4
               with:
                 name: build-artifact
                 path: dist/build.txt
-
             
+            - run: echo "Success message"
+            
+            - name: Check and update badges
+              uses: lucasvanmol/status-badges@v1
+              with:
+                path: "README.md"
+                token: ${{ secrets.GITHUB_TOKEN }}
